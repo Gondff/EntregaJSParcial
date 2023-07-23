@@ -1,3 +1,19 @@
+let palermo = document.querySelector("#palermo");
+
+fetch("data.json")
+.then((resp) => resp.json())
+.then((data) => {
+  console.log(data.results);
+
+  data.map((item) => {
+    const content = document.createElement("div");
+    content.innerHTML = `
+      <h4>${item.name}</h4>
+      <img src="${item.img}"></img>
+    `;
+    palermo.append(content);
+  });
+});
 
 //Crear la clase estudiante
 
