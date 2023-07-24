@@ -1,4 +1,4 @@
-let palermo = document.querySelector("#palermo");
+let palermo = document.querySelector("#entidades");
 
 fetch("data.json")
 .then((resp) => resp.json())
@@ -8,10 +8,10 @@ fetch("data.json")
   data.map((item) => {
     const content = document.createElement("div");
     content.innerHTML = `
-      <h4>${item.name}</h4>
       <img src="${item.img}"></img>
+      <h4>${item.name}</h4>
     `;
-    palermo.append(content);
+    entidades.append(content);
   });
 });
 
